@@ -1,9 +1,9 @@
 # 📚 Book Store FE
 
 <p align="center">
-  <img src="https://vitejs.dev/logo.svg" width="100" alt="Vite Logo" />
-  <img src="https://reactjs.org/logo-og.png" width="100" alt="React Logo" />
-  <img src="https://cdn.jsdelivr.net/gh/remojansen/logo.ts@master/ts.svg" width="100" alt="TypeScript Logo" />
+  <img src="https://img.shields.io/badge/Vite-%23646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/React-%2361DAFB?logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-%233178C6?logo=typescript&logoColor=white" alt="TypeScript" />
 </p>
 
 ---
@@ -59,11 +59,11 @@
 ## 🛠 기술 스택 (Tech Stack)
 
 <p align="center">
-  <img src="https://vitejs.dev/logo.svg" width="50" alt="Vite" />
-  <img src="https://reactjs.org/logo-og.png" width="50" alt="React" />
-  <img src="https://cdn.jsdelivr.net/gh/remojansen/logo.ts@master/ts.svg" width="50" alt="TypeScript" />
-  <img src="https://react-query-v3.tanstack.com/_next/static/media/logo.1c2b8b99.svg" width="50" alt="Tanstack Query" />
-  <img src="https://zustand-demo.pmnd.rs/favicon.ico" width="50" alt="Zustand" />
+  <img src="https://img.shields.io/badge/Vite-%23646CFF?logo=vite&logoColor=white" alt="Vite" />
+  <img src="https://img.shields.io/badge/React-%2361DAFB?logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-%233178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tanstack%20Query-%23FF4154?logo=react-query&logoColor=white" alt="Tanstack Query" />
+  <img src="https://img.shields.io/badge/Zustand-%23000000?logo=zeit&logoColor=white" alt="Zustand" />
 </p>
 
 ### Frontend & Infrastructure
@@ -137,7 +137,3 @@ $ npm run build
 ## 📄 라이선스 (License)
 
 본 프로젝트는 MIT License를 따릅니다.
-
-```
-
-```
