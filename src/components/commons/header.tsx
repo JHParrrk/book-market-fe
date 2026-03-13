@@ -39,9 +39,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
 
       {/* 🎯 [중앙] 로고 */}
       <h1 className="logo">
-        <Link to="/">
-          BookMarket
-        </Link>
+        <Link to="/">BookMarket</Link>
       </h1>
 
       {/* 🎯 [우측 1] 카테고리/이벤트 메뉴 (모바일에서는 햄버거 버튼) */}

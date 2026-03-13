@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react';
 import logo from '@/assets/images/logo.png';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Footer = () => {
   return (
     <FooterStyle>
-      <h1 className="logo">
-        BookMarket
-      </h1>
+      <h1 className="logo">BookMarket</h1>
       <div className="copyright">
         <p>copyright(c), 2025, book store.</p>
       </div>

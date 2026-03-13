@@ -76,6 +76,7 @@ export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: ${({ theme }) => theme.color.text}; /* Adjusted for dark mode */
     }
     .summary {
       font-size: 0.875rem;
@@ -95,7 +96,7 @@ export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
     .price {
       font-size: 1rem;
       font-weight: 700;
-      color: ${({ theme }) => theme.color.secondary};
+      color: ${({ theme }) => theme.color.text}; /* Adjusted for dark mode */
       margin: 0 0 4px 0;
       margin-top: auto; /* Pushes the price and below to the bottom */
     }
