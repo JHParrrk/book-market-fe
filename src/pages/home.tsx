@@ -1,12 +1,12 @@
-import Empty from "@/components/commons/Empty";
-import Title from "@/components/commons/Title";
-import Banner from "@/components/commons/banner/Banner";
-import MainBest from "@/features/main/components/MainBest";
-import MainNewBooks from "@/features/main/components/MainNewBooks";
-import MainReview from "@/features/main/components/MainReview";
-import { useMain } from "@/features/main/hooks/useMain";
-import React from "react";
-import styled from "styled-components";
+import Empty from '@/components/commons/Empty';
+import Title from '@/components/commons/Title';
+import Banner from '@/components/commons/banner/Banner';
+import MainBest from '@/features/main/components/MainBest';
+import MainNewBooks from '@/features/main/components/MainNewBooks';
+import MainReview from '@/features/main/components/MainReview';
+import { useMain } from '@/features/main/hooks/useMain';
+import React from 'react';
+import styled from 'styled-components';
 
 const Home = () => {
   const { reviews, newBooks, bestBooks /*, banners */ } = useMain();

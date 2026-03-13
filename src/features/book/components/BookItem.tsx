@@ -45,7 +45,9 @@ export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
     background-color: ${({ theme }) => theme.color.background_light};
     border-radius: ${({ theme }) => theme.borderRadius.default};
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-4px);

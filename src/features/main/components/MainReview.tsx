@@ -53,7 +53,8 @@ const MainReviewStyle = styled.div`
 
   .slick-dots {
     li.slick-active button:before {
-      color: ${({ theme }) => theme.color.primary}; /* 활성 닷 색상 테마 강조색 사용 */
+      color: ${({ theme }) =>
+        theme.color.primary}; /* 활성 닷 색상 테마 강조색 사용 */
     }
     li button:before {
       color: ${({ theme }) => theme.color.text};

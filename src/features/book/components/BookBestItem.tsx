@@ -1,6 +1,6 @@
-import { Book } from "@/features/book/types/book.model";
-import React from "react";
-import styled from "styled-components";
+import { Book } from '@/features/book/types/book.model';
+import React from 'react';
+import styled from 'styled-components';
 import BookItem, { BookItemStyle } from '@/features/book/components/BookItem';
 
 interface Props {
@@ -27,7 +27,9 @@ const BookBestItemStyle = styled.div`
 
     /* 베스트 셀러 아이템을 위한 추가 스타일링 */
     a {
-      background-color: ${({ theme }) => theme.color.background_light}; /* 다크모드에서 패널 구분을 위해 background_light 사용 */
+      background-color: ${({ theme }) =>
+        theme.color
+          .background_light}; /* 다크모드에서 패널 구분을 위해 background_light 사용 */
       border: 1px solid ${({ theme }) => theme.color.border}; /* 테두리 추가 */
     }
 

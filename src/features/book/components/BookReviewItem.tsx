@@ -1,14 +1,14 @@
-import { BookReviewItem as IBookReviewItem } from "@/features/book/types/book.model";
-import { formatDate } from "@/utils/format";
-import React from "react";
-import styled from "styled-components";
-import { FaStar } from "react-icons/fa";
+import { BookReviewItem as IBookReviewItem } from '@/features/book/types/book.model';
+import { formatDate } from '@/utils/format';
+import React from 'react';
+import styled from 'styled-components';
+import { FaStar } from 'react-icons/fa';
 
 interface Props {
   review: IBookReviewItem;
 }
 
-const Star = (props: Pick<IBookReviewItem, "rating">) => {
+const Star = (props: Pick<IBookReviewItem, 'rating'>) => {
   return (
     <span className="star">
       {Array.from({ length: props.rating }, (_, i) => (
@@ -26,7 +26,7 @@ const BookReviewItem = ({ review }: Props) => {
           <span>{review.user_id}</span>
           <Star rating={review.rating} />
         </div>
-        <div>{formatDate(review.created_at || "")}</div>
+        <div>{formatDate(review.created_at || '')}</div>
       </header>
       <div className="content">
         <p>{review.content}</p>

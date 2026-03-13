@@ -78,33 +78,22 @@ const BooksFilter = () => {
                 <div className="sub-categories">
                   {subCategories.map((sub) => (
                     <React.Fragment key={sub.id}>
-                      <Button
-                        size="medium"
-                        scheme={
-                          currentCategoryId === sub.id?.toString()
-                            ? 'primary'
-                            : 'normal'
-                        }
+                      <button
+                        className={`dropdown-item ${currentCategoryId === sub.id?.toString() ? 'active' : ''}`}
                         onClick={() => handleCategory(sub.id)}
                       >
                         {sub.name}
-                      </Button>
+                      </button>
                       {category
                         .filter((sub3) => sub3.parent_id === sub.id)
                         .map((sub3) => (
-                          <Button
+                          <button
                             key={sub3.id}
-                            size="small"
-                            scheme={
-                              currentCategoryId === sub3.id?.toString()
-                                ? 'primary'
-                                : 'normal'
-                            }
+                            className={`dropdown-item sub-item ${currentCategoryId === sub3.id?.toString() ? 'active' : ''}`}
                             onClick={() => handleCategory(sub3.id)}
-                            style={{ marginLeft: '10px' }}
                           >
-                            {sub3.name}
-                          </Button>
+                            └ {sub3.name}
+                          </button>
                         ))}
                     </React.Fragment>
                   ))}
@@ -142,26 +131,53 @@ const BooksFilterStyle = styled.div`
       .sub-categories {
         display: none;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 4px);
         left: 0;
-        background-color: ${({ theme }) =>
-          theme.color.background}; /* Adjusted for dark mode */
-        color: ${({ theme }) => theme.color.text}; /* Ensure text is visible */
-        border: 1px solid ${({ theme }) => theme.color.text}; /* Add border for better visibility */
+        background-color: ${({ theme }) => theme.color.background_light};
+        border: 1px solid ${({ theme }) => theme.color.border};
+        border-radius: ${({ theme }) => theme.borderRadius.default};
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        min-width: 180px;
+        flex-direction: column;
+        padding: 8px 0;
+        overflow: hidden;
 
-        button {
-          color: ${({ theme }) =>
-            theme.color.text}; /* Ensure button text is visible */
+        .dropdown-item {
+          background: none;
+          border: none;
+          width: 100%;
+          text-align: left;
+          padding: 10px 16px;
+          font-size: 0.95rem;
+          color: ${({ theme }) => theme.color.text};
+          cursor: pointer;
+          transition: background-color 0.2s, color 0.2s;
+
           &:hover {
-            color: ${({ theme }) =>
-              theme.color.primary}; /* Highlight on hover */
+            background-color: ${({ theme }) => theme.color.background};
+            color: ${({ theme }) => theme.color.primary};
+          }
+
+          &.active {
+            color: ${({ theme }) => theme.color.primary};
+            font-weight: 700;
+            background-color: ${({ theme }) => theme.color.background};
+          }
+
+          &.sub-item {
+            padding-left: 28px;
+            font-size: 0.9rem;
+            color: ${({ theme }) => theme.color.secondary};
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            
+            &::before {
+              content: '';
+            }
           }
         }
-
-        z-index: 100;
-        min-width: 200px;
-        flex-direction: column;
-        gap: 8px;
       }
 
       &:hover .sub-categories {
