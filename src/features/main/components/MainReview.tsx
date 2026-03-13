@@ -1,4 +1,4 @@
-import { BookReviewItem as IBookReviewItem } from '@/features/books/types/book.model';
+import { BookReviewItem as IBookReviewItem } from '@/features/book/types/book.model';
 import React from 'react';
 import styled from 'styled-components';
 import BookReviewItem from '@/features/book/components/BookReviewItem';

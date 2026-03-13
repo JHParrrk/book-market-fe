@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
-import { Cart } from "@/features/basket/types/cart.model";
+import { Cart } from "@/features/cart/types/cart.model";
 import Button from "@/components/commons/Button";
 import Title from "@/components/commons/Title";
 import { formatNumber } from "@/utils/format";
-import CheckIconButton from '@/features/basket/components/CheckIconButton';
+import CheckIconButton from '@/features/cart/components/CheckIconButton';
 import { useAlert } from "@/hooks/useAlert";
 
 interface Props {

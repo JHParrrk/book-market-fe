@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useCategory } from "@/features/books/hooks/useCategory";
+import { useCategory } from "@/features/book/hooks/useCategory";
 import CategoryItem from '@/components/commons/categoryItem';
 import { Link, useLocation } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
   const location = useLocation(); // Get the current route
 
-  const mainCategories = category.filter((item) => item.parent_id === null);
+  const mainCategories = category.filter((item: any) => item.parent_id === null);
 
   const handleToggle = (id: number | null) => {
     if (id === null) return; // ID가 null이면 무시
@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             </Link>
           </AllLinkItemStyle>
           {/* Level 1 (메인 카테고리) 렌더링 */}
-          {mainCategories.map((item) => (
+          {mainCategories.map((item: any) => (
             <CategoryItem
               key={item.id ?? "all"}
               item={item}

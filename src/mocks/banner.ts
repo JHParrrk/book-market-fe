@@ -1,4 +1,4 @@
-import { BookReviewItem } from "@/features/books/types/book.model";
+import { BookReviewItem } from "@/features/book/types/book.model";
 import { http, HttpResponse } from "msw";
 import { fakerKO as faker } from "@faker-js/faker";
 import { Banner } from "@/features/main/types/banner.model";

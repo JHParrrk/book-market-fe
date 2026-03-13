@@ -1,8 +1,8 @@
 import { fetchBanners } from "@/features/main/api/banner.api";
-import { fetchBestBooks, fetchBooks } from "@/features/books/api/books.api";
+import { fetchBestBooks, fetchBooks } from "@/features/book/api/books.api";
 import { fetchReviewAll } from "@/features/book/api/review.api";
 import { Banner } from "@/features/main/types/banner.model";
-import { Book, BookReviewItem } from "@/features/books/types/book.model";
+import { Book, BookReviewItem } from "@/features/book/types/book.model";
 import { useEffect, useState } from "react";
 
 export const useMain = () => {
@@ -21,11 +21,11 @@ export const useMain = () => {
       isNew: true,
       currentPage: 1,
       limit: 4,
-    }).then(({ books }) => {
+    }).then(({ books }: { books: Book[] }) => {
       setNewBooks(books || []);
     });
 
-    fetchBestBooks().then((books) => {
+    fetchBestBooks().then((books: Book[]) => {
       setBestBooks(books || []);
     });
 

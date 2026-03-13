@@ -1,7 +1,7 @@
-import { Book } from "@/features/books/types/book.model";
+import { Book } from "@/features/book/types/book.model";
 import React from "react";
 import styled from "styled-components";
-import BookItem from "@/features/books/components/BookItem";
+import BookItem from "@/features/book/components/BookItem";
 
 interface Props {
   books: Book[];

@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from "react";
 import styled from "styled-components";
 import Title from "@/components/commons/Title";
-import BasketItem from "@/features/basket/components/BasketItem";
-import { useBasket } from "@/features/basket/hooks/useBasket";
+import BasketItem from "@/features/cart/components/BasketItem";
+import { useBasket } from "@/features/cart/hooks/useBasket";
 import Empty from "@/components/commons/Empty";
 import { FaShoppingBasket } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import BasketSummary from "@/features/basket/components/BasketSummary";
+import BasketSummary from "@/features/cart/components/BasketSummary";
 import Button from "@/components/commons/Button";
 import { useAlert } from "@/hooks/useAlert";
 

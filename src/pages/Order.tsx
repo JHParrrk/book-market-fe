@@ -1,16 +1,16 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Title from "@/components/commons/Title";
-import { BasketStyle } from '@/pages/Basket'; // BasketStyle이 import 됨
-import BasketSummary from "@/features/basket/components/BasketSummary";
-import Button from "@/components/commons/Button";
-import InputText from "@/components/commons/inputText";
-import { useForm } from "react-hook-form";
-import { DeliveryInfo, OrderSheet } from "@/features/order/types/order.model";
-import FindAddressButton from "@/features/order/components/FindAddressButton";
-import { useAlert } from "@/hooks/useAlert";
-import { order } from "@/features/order/api/order.api";
-import { useAuth } from "@/features/auth/hooks/useAuth";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Title from '@/components/commons/Title';
+import { BasketStyle } from '@/pages/Basket';
+import BasketSummary from '@/features/cart/components/BasketSummary';
+import Button from '@/components/commons/Button';
+import InputText from '@/components/commons/inputText';
+import { useForm } from 'react-hook-form';
+import { DeliveryInfo, OrderSheet } from '@/features/order/types/order.model';
+import FindAddressButton from '@/features/order/components/FindAddressButton';
+import { useAlert } from '@/hooks/useAlert';
+import { order } from '@/features/order/api/order.api';
+import { useAuth } from '@/features/auth/hooks/useAuth';
 
 interface DeliveryForm extends DeliveryInfo {
   addressDetail: string;
@@ -39,22 +39,22 @@ const Order = () => {
     const response = await userGetMyInfo();
     const userInfo = response.user;
 
-    setValue("recipient", userInfo.name, { shouldValidate: true });
-    setValue("phone", userInfo.phone_number || "", { shouldValidate: true });
-    setValue("address", userInfo.address || "", { shouldValidate: true });
-    setValue("addressDetail", "");
+    setValue('recipient', userInfo.name, { shouldValidate: true });
+    setValue('phone', userInfo.phone_number || '', { shouldValidate: true });
+    setValue('address', userInfo.address || '', { shouldValidate: true });
+    setValue('addressDetail', '');
   };
 
   const handleSetCustomAddress = () => {
     setUseDefaultAddress(false);
-    setValue("recipient", "");
-    setValue("phone", "");
-    setValue("address", "");
-    setValue("addressDetail", "");
+    setValue('recipient', '');
+    setValue('phone', '');
+    setValue('address', '');
+    setValue('addressDetail', '');
   };
 
   const handleFindAddress = (address: string) => {
-    setValue("address", address);
+    setValue('address', address);
   };
 
   const handlePay = (data: DeliveryForm) => {
@@ -77,10 +77,10 @@ const Order = () => {
       };
     }
 
-    showConfirm("주문을 진행하시겠습니까?", () => {
+    showConfirm('주문을 진행하시겠습니까?', () => {
       order(orderData).then(() => {
-        showAlert("주문이 처리되었습니다.");
-        navigate("/orderlist");
+        showAlert('주문이 처리되었습니다.');
+        navigate('/orderlist');
       });
     });
   };
@@ -94,17 +94,17 @@ const Order = () => {
             <Title size="medium" color="text">
               배송 정보
             </Title>
-            <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
               <Button
                 size="medium"
-                scheme={useDefaultAddress ? "primary" : "normal"}
+                scheme={useDefaultAddress ? 'primary' : 'normal'}
                 onClick={handleSetDefaultAddress}
               >
                 기본 배송지
               </Button>
               <Button
                 size="medium"
-                scheme={!useDefaultAddress ? "primary" : "normal"}
+                scheme={!useDefaultAddress ? 'primary' : 'normal'}
                 onClick={handleSetCustomAddress}
               >
                 직접 입력
@@ -116,7 +116,7 @@ const Order = () => {
                 <div className="input">
                   <InputText
                     inputType="text"
-                    {...register("address", { required: true })}
+                    {...register('address', { required: true })}
                     readOnly={useDefaultAddress}
                   />
                 </div>
@@ -133,7 +133,7 @@ const Order = () => {
                 <div className="input">
                   <InputText
                     inputType="text"
-                    {...register("addressDetail")}
+                    {...register('addressDetail')}
                     readOnly={false} // Always editable
                   />
                 </div>
@@ -147,7 +147,7 @@ const Order = () => {
                 <div className="input">
                   <InputText
                     inputType="text"
-                    {...register("recipient", { required: true })}
+                    {...register('recipient', { required: true })}
                     readOnly={useDefaultAddress}
                   />
                 </div>
@@ -161,7 +161,7 @@ const Order = () => {
                 <div className="input">
                   <InputText
                     inputType="text"
-                    {...register("phone", { required: true })}
+                    {...register('phone', { required: true })}
                     readOnly={useDefaultAddress}
                   />
                 </div>

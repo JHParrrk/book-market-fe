@@ -1,5 +1,5 @@
-import { Cart } from '@/features/basket/types/cart.model';
-import { deleteCart, fetchCart } from '@/features/basket/api/carts.api';
+import { Cart } from '@/features/cart/types/cart.model';
+import { deleteCart, fetchCart } from '@/features/cart/api/carts.api';
 import { useEffect, useState } from 'react';
 
 export const useBasket = () => {

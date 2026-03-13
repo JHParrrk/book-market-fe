@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Title from "@/components/commons/Title";
 import { useParams } from "react-router-dom";
 import { useBook } from "@/features/book/hooks/useBook";
-import { BookDetail as IBookDetail } from "@/features/books/types/book.model";
+import { BookDetail as IBookDetail } from "@/features/book/types/book.model";
 import { formatDate, formatNumber } from "@/utils/format";
 import { Link } from "react-router-dom";
 import EllipsisBox from "@/components/commons/EllipsisBox";

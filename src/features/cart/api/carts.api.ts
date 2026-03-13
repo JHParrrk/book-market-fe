@@ -1,4 +1,4 @@
-import { Cart } from '@/features/basket/types/cart.model';
+import { Cart } from '@/features/cart/types/cart.model';
 import { httpClient } from '@/apis/https';
 
 interface AddCartParams {
