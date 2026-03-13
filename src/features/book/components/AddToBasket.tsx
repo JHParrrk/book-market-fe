@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BookDetail } from "@/features/books/types/book.model";
+import { BookDetail } from "@/features/book/types/book.model";
 import InputText from "@/components/commons/inputText";
 import Button from "@/components/commons/Button";
 import { Link } from "react-router-dom";

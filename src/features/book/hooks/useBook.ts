@@ -3,11 +3,11 @@ import {
   BookDetail,
   BookReviewItem,
   BookReviewItemWrite,
-} from "@/features/books/types/book.model";
-import { fetchBook, toggleLikeBook } from "@/features/books/api/books.api";
+} from "@/features/book/types/book.model";
+import { fetchBook, toggleLikeBook } from "@/features/book/api/books.api";
 import { useAuthStore } from "@/stores/authStore";
 import { useAlert } from "@/hooks/useAlert";
-import { addCart } from "@/features/basket/api/carts.api";
+import { addCart } from "@/features/cart/api/carts.api";
 import { addBookReview, fetchBookReview } from "@/features/book/api/review.api";
 import { useToast } from "@/hooks/useToast";
 
@@ -30,7 +30,7 @@ export const useBook = (bookId: string | undefined) => {
     toggleLikeBook(book.id)
       .then(() => {
         // 서버로부터 최신 책 정보를 다시 가져와서 상태를 업데이트합니다.
-        fetchBook(book.id.toString()).then((updatedBook) => {
+        fetchBook(book.id.toString()).then((updatedBook: BookDetail) => {
           setBook(updatedBook);
           showToast(
             updatedBook.isLiked
@@ -60,7 +60,7 @@ export const useBook = (bookId: string | undefined) => {
   useEffect(() => {
     if (!bookId) return;
 
-    fetchBook(bookId).then((book) => {
+    fetchBook(bookId).then((book: BookDetail) => {
       setBook(book);
     });
 

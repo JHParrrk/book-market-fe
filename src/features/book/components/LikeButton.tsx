@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BookDetail } from "@/features/books/types/book.model";
+import { BookDetail } from "@/features/book/types/book.model";
 import Button from "@/components/commons/Button";
 import { FaHeart } from "react-icons/fa";
 

@@ -1,4 +1,4 @@
-import { BookReviewItem, BookReviewItemWrite } from '@/features/books/types/book.model';
+import { BookReviewItem, BookReviewItemWrite } from '@/features/book/types/book.model';
 import { Pagination } from '@/models/pagination.model';
 import { requestHandler } from '@/apis/https';
 

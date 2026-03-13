@@ -1,4 +1,4 @@
-import { BookReviewItemWrite } from "@/features/books/types/book.model";
+import { BookReviewItemWrite } from "@/features/book/types/book.model";
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
