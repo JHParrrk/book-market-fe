@@ -32,6 +32,8 @@
   },
   "scripts": {
     "start": "vite",
+    "main": "vite --mode main",
+    "sub": "vite --mode sub",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "vitest"
