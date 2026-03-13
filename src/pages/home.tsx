@@ -37,7 +37,14 @@ const Home = () => {
 const HomeStyle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 48px; /* 섹션 간 여백 확대 */
+  padding: 24px 0; /* 컨테이너 상하 여백 추가 */
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* 타이틀과 콘텐츠 간 간격 추가 */
+  }
 `;
 
 export default Home;

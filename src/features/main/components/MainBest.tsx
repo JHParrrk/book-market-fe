@@ -20,10 +20,13 @@ const MainBest = ({ books }: Props) => {
 const MainBestStyle = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 20px; /* 아이템 간격 넓힘 */
+  padding: 12px 12px 24px 12px; /* 바깥 여백 및 호버 시 잘리는 문제 방지 */
 
   @media screen and (${({ theme }) => theme.mediaQuery.mobile}) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 12px 0 24px 0;
   }
 `;
 

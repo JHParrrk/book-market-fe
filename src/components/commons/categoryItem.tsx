@@ -86,12 +86,16 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
     padding: 8px 12px;
     margin-bottom: 4px;
     border-radius: ${({ theme }) => theme.borderRadius.default || '8px'};
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      background-color: ${({ theme }) => theme.color.background_light || 'rgba(0, 0, 0, 0.05)'};
-      
-      a, button {
+      background-color: ${({ theme }) =>
+        theme.color.background_light || 'rgba(0, 0, 0, 0.05)'};
+
+      a,
+      button {
         color: ${({ theme }) => theme.color.primary};
       }
     }
@@ -115,7 +119,7 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
       align-items: center;
       padding: 4px;
       transition: color 0.2s ease;
-      
+
       svg {
         font-size: 1.1rem;
       }

@@ -22,7 +22,7 @@ const BookReviewItem = ({ review }: Props) => {
   return (
     <BookReviewItemStyle>
       <header className="header">
-        <div>
+        <div className="user">
           <span>{review.user_id}</span>
           <Star rating={review.rating} />
         </div>
@@ -38,10 +38,13 @@ const BookReviewItem = ({ review }: Props) => {
 const BookReviewItemStyle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  padding: 12px;
+  gap: 16px;
+  background-color: ${({ theme }) => theme.color.background_light};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
   border-radius: ${({ theme }) => theme.borderRadius.default};
+  height: 100%;
+  border: 1px solid ${({ theme }) => theme.color.border};
 
   .header {
     display: flex;
@@ -50,9 +53,21 @@ const BookReviewItemStyle = styled.div`
     font-size: 0.875rem;
     color: ${({ theme }) => theme.color.secondary};
     padding: 0;
+    margin-bottom: 8px;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: ${({ theme }) => theme.color.text};
+    }
 
     .star {
-      padding: 0 0 0 8px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 2px;
       svg {
         fill: ${({ theme }) => theme.color.primary};
       }
@@ -60,10 +75,17 @@ const BookReviewItemStyle = styled.div`
   }
 
   .content {
+    flex: 1; /* 리뷰 내용이 짧아도 카드 높이를 일정하게 유지 */
     p {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 0;
+      color: ${({ theme }) => theme.color.text};
+      display: -webkit-box;
+      -webkit-line-clamp: 4; /* 리뷰 길 경우 생략 표시 */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 `;

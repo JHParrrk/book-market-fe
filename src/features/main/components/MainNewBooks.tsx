@@ -20,10 +20,13 @@ const MainNewBooks = ({ books }: Props) => {
 const MainNewBooksStyle = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 24px; /* 더 넓은 여백으로 시원한 느낌 연출 */
+  padding: 12px 12px 24px 12px;
 
   @media screen and (${({ theme }) => theme.mediaQuery.mobile}) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 12px 0 24px 0;
   }
 `;
 

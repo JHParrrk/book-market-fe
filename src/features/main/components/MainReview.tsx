@@ -38,25 +38,41 @@ const MainReviewStyle = styled.div`
   padding: 0 0 24px 0;
 
   .slick-track {
-    padding: 12px 0;
+    padding: 12px 0; /* 슬라이더 잘림 방지 */
   }
 
   .slick-slide > div {
     margin: 0 12px;
   }
 
-  .slick-prev::before,
+  .slick-prev:before,
   .slick-next:before {
     color: ${({ theme }) => theme.color.text};
+    font-size: 2rem; /* 슬라이드 네비게이션 버튼 크기 키움 */
+  }
+
+  .slick-dots {
+    li.slick-active button:before {
+      color: ${({ theme }) => theme.color.primary}; /* 활성 닷 색상 테마 강조색 사용 */
+    }
+    li button:before {
+      color: ${({ theme }) => theme.color.text};
+      opacity: 0.3;
+    }
+    li.slick-active button:before {
+      opacity: 1;
+    }
   }
 
   @media screen and (${({ theme }) => theme.mediaQuery.mobile}) {
     .slick-prev {
-      left: 0;
+      left: -10px; /* 모바일에서 버튼이 카드를 가리지 않도록 위치 조정 */
+      z-index: 10;
     }
 
     .slick-next {
-      right: 0;
+      right: -10px;
+      z-index: 10;
     }
   }
 `;

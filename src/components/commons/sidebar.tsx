@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { useCategory } from "@/features/book/hooks/useCategory";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useCategory } from '@/features/book/hooks/useCategory';
 import CategoryItem from '@/components/commons/categoryItem';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -14,7 +14,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
   const location = useLocation(); // Get the current route
 
-  const mainCategories = category.filter((item: any) => item.parent_id === null);
+  const mainCategories = category.filter(
+    (item: any) => item.parent_id === null,
+  );
 
   const handleToggle = (id: number | null) => {
     if (id === null) return; // ID가 null이면 무시
@@ -50,7 +52,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           {/* Level 1 (메인 카테고리) 렌더링 */}
           {mainCategories.map((item: any) => (
             <CategoryItem
-              key={item.id ?? "all"}
+              key={item.id ?? 'all'}
               item={item}
               allCategories={category} // 전체 데이터 전달
               expandedIds={expandedIds}
@@ -77,7 +79,7 @@ const SidebarStyle = styled.div<{ isOpen: boolean }>`
   padding: 20px;
   overflow-y: auto;
   transform: ${({ isOpen }) =>
-    isOpen ? "translateX(0)" : "translateX(-100%)"}; /* 슬라이드 인/아웃 효과 */
+    isOpen ? 'translateX(0)' : 'translateX(-100%)'}; /* 슬라이드 인/아웃 효과 */
   transition: transform 0.3s ease;
 
   h3 {
@@ -127,10 +129,13 @@ const AllLinkItemStyle = styled.li`
     display: block;
     padding: 8px 12px;
     border-radius: ${({ theme }) => theme.borderRadius.default};
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      background-color: ${({ theme }) => theme.color.background_light || 'rgba(0,0,0,0.05)'};
+      background-color: ${({ theme }) =>
+        theme.color.background_light || 'rgba(0,0,0,0.05)'};
       color: ${({ theme }) => theme.color.primary};
     }
   }

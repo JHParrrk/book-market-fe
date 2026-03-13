@@ -42,9 +42,15 @@ export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     text-decoration: none;
     height: 100%;
-    background-color: ${({ theme }) => theme.color.background};
+    background-color: ${({ theme }) => theme.color.background_light};
     border-radius: ${({ theme }) => theme.borderRadius.default};
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
   }
 
   .img {
