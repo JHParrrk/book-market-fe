@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import BookItem from '@/features/book/components/BookItem';
-import { Book } from "@/features/book/types/book.model";
-import { useLocation } from "react-router-dom";
-import { QUERYSTRING } from "@/constants/queryString";
+import { Book } from '@/features/book/types/book.model';
+import { useLocation } from 'react-router-dom';
+import { QUERYSTRING } from '@/constants/queryString';
 import { ViewMode } from '@/features/book/components/BooksViewSwitcher';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const BooksList = ({ books }: Props) => {
-  const [view, setView] = useState<ViewMode>("grid");
+  const [view, setView] = useState<ViewMode>('grid');
   const location = useLocation();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const BooksList = ({ books }: Props) => {
   }, [location.search]);
 
   return (
-    <BooksListStyle view={view}>
+    <BooksListStyle $view={view}>
       {books.map((book) => (
         <BookItem key={book.id} book={book} view={view} />
       ))}
@@ -31,13 +31,13 @@ const BooksList = ({ books }: Props) => {
 };
 
 interface BooksListStyleProps {
-  view: ViewMode;
+  $view: ViewMode;
 }
 
 const BooksListStyle = styled.div<BooksListStyleProps>`
   display: grid;
-  grid-template-columns: ${({ view }) =>
-    view === "grid" ? "repeat(4,1fr)" : "repeat(1,1fr)"};
+  grid-template-columns: ${({ $view }) =>
+    $view === 'grid' ? 'repeat(4,1fr)' : 'repeat(1,1fr)'};
   gap: 24px;
 `;
 export default BooksList;

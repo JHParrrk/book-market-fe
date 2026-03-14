@@ -36,7 +36,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
   return (
     <>
-      <SidebarStyle isOpen={isOpen}>
+      <SidebarStyle $isOpen={isOpen}>
         <div className="sidebar-header">
           <h3>카테고리</h3>
           <button className="close-btn" onClick={onClose}>
@@ -67,7 +67,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   );
 };
 
-const SidebarStyle = styled.div<{ isOpen: boolean }>`
+const SidebarStyle = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -78,8 +78,10 @@ const SidebarStyle = styled.div<{ isOpen: boolean }>`
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
-  transform: ${({ isOpen }) =>
-    isOpen ? 'translateX(0)' : 'translateX(-100%)'}; /* 슬라이드 인/아웃 효과 */
+  transform: ${({ $isOpen }) =>
+    $isOpen
+      ? 'translateX(0)'
+      : 'translateX(-100%)'}; /* 슬라이드 인/아웃 효과 */
   transition: transform 0.3s ease;
 
   h3 {

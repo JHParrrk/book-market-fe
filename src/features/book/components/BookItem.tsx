@@ -16,7 +16,7 @@ const BookItem = ({ book, view }: Props) => {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <BookItemStyle view={view}>
+    <BookItemStyle $view={view}>
       <Link to={`/books/${book.id}`}>
         <div className={`img ${imgLoaded ? 'loaded' : 'loading'}`}>
           <img
@@ -40,11 +40,11 @@ const BookItem = ({ book, view }: Props) => {
   );
 };
 
-export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
+export const BookItemStyle = styled.div<{ $view?: ViewMode }>`
   height: 100%;
   a {
     display: flex;
-    flex-direction: ${({ view }) => (view === 'grid' ? 'column' : 'row')};
+    flex-direction: ${({ $view }) => ($view === 'grid' ? 'column' : 'row')};
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
     border: 1px solid
       ${({ theme }) =>
@@ -70,9 +70,9 @@ export const BookItemStyle = styled.div<Pick<Props, 'view'>>`
   .img {
     position: relative;
     overflow: hidden;
-    width: ${({ view }) => (view === 'grid' ? 'auto' : '160px')};
-    aspect-ratio: ${({ view }) => (view === 'grid' ? '3 / 4' : 'unset')};
-    min-height: ${({ view }) => (view === 'grid' ? 'auto' : '220px')};
+    width: ${({ $view }) => ($view === 'grid' ? 'auto' : '160px')};
+    aspect-ratio: ${({ $view }) => ($view === 'grid' ? '3 / 4' : 'unset')};
+    min-height: ${({ $view }) => ($view === 'grid' ? 'auto' : '220px')};
     background-color: ${({ theme }) => theme.color.border};
     flex-shrink: 0;
 

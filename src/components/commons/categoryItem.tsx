@@ -37,7 +37,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
   const paddingLeft = depth > 1 ? `${(depth - 1) * 15}px` : 0;
 
   return (
-    <CategoryItemStyle depth={depth}>
+    <CategoryItemStyle $depth={depth}>
       <div className="category-item" style={{ paddingLeft: paddingLeft }}>
         <Link
           to={
@@ -78,7 +78,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({
 };
 
 // 스타일드 컴포넌트 (SidebarStyle에서 필요한 스타일만 가져옵니다)
-const CategoryItemStyle = styled.li<{ depth: number }>`
+const CategoryItemStyle = styled.li<{ $depth: number }>`
   .category-item {
     display: flex;
     justify-content: space-between;
@@ -104,8 +104,8 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
     a {
       text-decoration: none;
       color: ${({ theme }) => theme.color.text};
-      font-size: ${({ depth }) => (depth === 1 ? '1.1rem' : '1rem')};
-      font-weight: ${({ depth }) => (depth === 1 ? 600 : 500)};
+      font-size: ${({ $depth }) => ($depth === 1 ? '1.1rem' : '1rem')};
+      font-weight: ${({ $depth }) => ($depth === 1 ? 600 : 500)};
       flex-grow: 1; /* 링크 영역 확장하여 터치 점유율 높임 */
       transition: color 0.2s ease;
     }
@@ -132,8 +132,8 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
     padding-left: 14px; /* 기존 인라인을 대체하기 위한 기본 여백 */
 
     /* 💡 Level 3 (depth >= 3) 이상부터 수평 레이아웃 적용 */
-    ${({ depth }) =>
-      depth >= 3 &&
+    ${({ $depth }) =>
+      $depth >= 3 &&
       `
         display: flex;
         overflow-x: auto; /* 수평 스크롤 허용 */
@@ -150,8 +150,8 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
       `}
 
     /* 레벨 1 (depth === 1)의 하위 메뉴에만 왼쪽 경계선 추가 */
-    ${({ depth, theme }) =>
-      depth === 1 &&
+    ${({ $depth, theme }) =>
+      $depth === 1 &&
       `
         border-left: 2px solid ${theme.color.border};
         margin-top: 5px;
@@ -160,8 +160,8 @@ const CategoryItemStyle = styled.li<{ depth: number }>`
     /* 💡 하위 li 항목 스타일: 수평 정렬을 위해 필요 */
     li {
       /* Level 3 이상일 때 수평 간격 및 줄바꿈 방지 */
-      ${({ depth }) =>
-        depth >= 3 &&
+      ${({ $depth }) =>
+        $depth >= 3 &&
         `
           display: inline-block;
           flex-shrink: 0; /* 공간이 부족해도 축소되지 않도록 함 */
